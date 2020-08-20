@@ -1,29 +1,52 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
+#define GALAO 21.6
+#define PRECO_GALAO 25
+#define LATA 108
+#define PRECO_LATA 80
 
-int main(){
+int main()
+{
+    double area_pintar, area_folga, qtd_latas, valor, restante;
 
-    int metrosPorLata = 108, valorLata = 80, valorGalao = 25, lata = 18;
-    float areaPintada, metrosPorGalao = 21.6, galao = 3.6, qtdLitros = areaPintada / 6;
+    scanf("%lf", &area_pintar);
 
-    printf("Qual o valor em metros quadrados da area a ser pintada?\n\n");
-    scanf("%f", &areaPintada);
+    printf("QUANTIDADE DE TINTA COM APENAS LATAS DE 18 LITROS = %.2lf\n", ceil(area_pintar / LATA) * 18);
+    printf("PRECO COM APENAS LATAS DE 18 LITROS = %.2lf\n", ceil(area_pintar / LATA) * PRECO_LATA);
 
-    printf("\nQuantidade de latas a serem compradas: %.0f totalizando %.0f litros", ceil(areaPintada / metrosPorLata), ceil(areaPintada / metrosPorLata) * lata );
-    printf("\nPreco total: %.0f\n", valorLata * ceil(areaPintada / metrosPorLata));
+    printf("QUANTIDADE DE TINTA COM APENAS GALOES DE 3.6 LITROS = %.2lf\n", ceil(area_pintar / GALAO) * 3.6);
+    printf("PRECO COM APENAS GALOES DE 3.6 LITROS = %.2lf\n", ceil(area_pintar / GALAO) * PRECO_GALAO);
 
-    printf("\nQuantidade de galoes a serem compradas: %.0f totalizando %.2f litros", ceil(areaPintada / metrosPorGalao), ceil(areaPintada / metrosPorGalao) * galao );
-    printf("\nPreco total: %.0f\n", valorGalao * ceil(areaPintada / metrosPorGalao));
+    area_folga = area_pintar * 1.1;
+    qtd_latas = floor(area_folga / LATA);
+    valor = qtd_latas * LATA;
+    restante = area_folga - valor;
 
-    printf("\nSera nescessario %.2f litros de tinta (galoes e latas)",(areaPintada / 6));
+    if (restante > 0 && restante <= GALAO)
+    {
+        printf("QUANTIDADE DE TINTA MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 18) + 3.6);
+        printf("PRECO MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 80) + 25);
+    }
+    else if (restante >= GALAO && restante <= 2 * GALAO)
+    {
+        printf("QUANTIDADE DE TINTA MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 18) + (3.6 * 2));
+        printf("PRECO MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 80) + 50);
+    }
+    else if (restante >= 2 * GALAO && restante <= 3 * GALAO)
+    {
+        printf("QUANTIDADE DE TINTA MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 18) + (3.6 * 3));
+        printf("PRECO MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas * 80) + 75);
+    }
+    else if (restante == 0)
+    {
+        printf("QUANTIDADE DE TINTA MISTURANDO GALOES E LATAS = %.2lf\n", qtd_latas * 18);
+        printf("PRECO MISTURANDO GALOES E LATAS = %.2lf\n", qtd_latas * 80);
+    }
+    else if (restante > 3 * GALAO)
+    {
+        printf("QUANTIDADE DE TINTA MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas + 1) * 18);
+        printf("PRECO MISTURANDO GALOES E LATAS = %.2lf\n", (qtd_latas + 1) * 80);
+    }
 
-    int qtdLatas = qtdLitros / 18;
-
-    float qtdLitrosRestante = (qtdLitros - qtdLatas) * 18;
-
-    float qtdGaloes = ceil((qtdLitrosRestante / 18)/3.6);
-
-    printf("%.2f galoes e %.2f latas", qtdLatas, qtdGaloes);
-return 0;
+    return 0;
 }
-//Nao consegui resolver a ultima parte da questão

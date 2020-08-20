@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main()
+{
+    int horas;
     
-int horas;
-scanf("%d", &horas);
+    scanf("%d", &horas);
 
-printf("o VALOR A PAGAR E = %d\n", (horas % 3 == 0) ? 10 * horas : (horas % 3 * 5) + ((horas / 3) * 10));
+    printf("O VALOR A PAGAR E = %d\n", (horas % 3 == 0) ? 10 * horas : (horas % 3 * 5) + ((horas / 3) * 10));
 
-return 0;
+    return 0;
 }

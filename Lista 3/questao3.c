@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    
-int numero; 
+int main()
+{
+    int numero;
 
-scanf("%lf", &numero);
+    scanf("%lf", &numero);
 
-printf("%s\n", (numero % 15  == 0) ? "O NUMERO E DIVISIVEL" : "O NUMERO NAO E DIVISIVEL");
+    printf("%s\n", (numero % 15 == 0) ? "O NUMERO E DIVISIVEL" : "O NUMERO NAO E DIVISIVEL");
 
-return 0;
+    return 0;
 }
