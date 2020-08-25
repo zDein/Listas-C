@@ -30,8 +30,6 @@ int main()
     num3 = sup;
   }
 
-  
-
   if (char1 == 'A')
   {
     ordenado1 = num1;
@@ -44,7 +42,7 @@ int main()
   {
     ordenado1 = num3;
   }
-  
+
   if (char2 == 'A')
   {
     ordenado2 = num1;
@@ -57,7 +55,7 @@ int main()
   {
     ordenado2 = num3;
   }
-  
+
   if (char3 == 'A')
   {
     ordenado3 = num1;

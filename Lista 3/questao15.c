@@ -42,6 +42,6 @@ int main()
     {
         printf("IMPOSTO A RECEBER\n");
     }
-    
+
     return 0;
 }
