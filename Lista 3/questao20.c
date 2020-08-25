@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 int main()
-{   int escolha;
+{
+    int escolha;
     double num1, num2, num3, sup;
 
     scanf("%d %lf %lf %lf", &escolha, &num1, &num2, &num3);
@@ -32,17 +33,17 @@ int main()
         printf("%.2lf %.2lf %.2lf\n", num1, num2, num3);
         break;
 
-    case(2):
+    case (2):
         printf("%.2lf %.2lf %.2lf\n", num3, num2, num1);
         break;
 
-    case(3):
+    case (3):
         printf("%.2lf %.2lf %.2lf\n", num2, num3, num1);
         break;
 
     default:
         printf("TU EH BURRO PORRA????\n");
     }
-    
+
     return 0;
 }

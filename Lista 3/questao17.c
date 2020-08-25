@@ -1,36 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() 
+int main()
 {
   int num1, num2, num3, sup, ordenado1, ordenado2, ordenado3;
   char char1, char2, char3, charsup;
 
-  scanf("%d %d %d\n",&num1, &num2, &num3);
+  scanf("%d %d %d\n", &num1, &num2, &num3);
   scanf("%c%c%c", &char1, &char2, &char3);
 
-// ordenando os numeros //
+  // ordenando os numeros //
 
-  if(num1 > num2)
+  if (num1 > num2)
   {
-  sup = num1;
-  num1 = num2;
-  num2 = sup;
+    sup = num1;
+    num1 = num2;
+    num2 = sup;
   }
-  if(num1 > num3)
+  if (num1 > num3)
   {
-  sup = num1;
-  num1 = num3;
-  num3 = sup;
+    sup = num1;
+    num1 = num3;
+    num3 = sup;
   }
-  if(num2 > num3)
+  if (num2 > num3)
   {
-  sup = num2;
-  num2 = num3;
-  num3 = sup;
+    sup = num2;
+    num2 = num3;
+    num3 = sup;
   }
 
-  // 
+  
 
   if (char1 == 'A')
   {
@@ -44,8 +44,8 @@ int main()
   {
     ordenado1 = num3;
   }
-  //
-    if (char2 == 'A')
+  
+  if (char2 == 'A')
   {
     ordenado2 = num1;
   }
@@ -57,7 +57,7 @@ int main()
   {
     ordenado2 = num3;
   }
-  //
+  
   if (char3 == 'A')
   {
     ordenado3 = num1;
@@ -69,10 +69,10 @@ int main()
   if (char3 == 'C')
   {
     ordenado3 = num3;
-  } 
+  }
 
-  printf("%d %d %d\n",ordenado1, ordenado2, ordenado3);
-  printf("%c %c %c",char1, char2, char3);
+  printf("%d %d %d\n", ordenado1, ordenado2, ordenado3);
+  printf("%c %c %c", char1, char2, char3);
 
   return 0;
 }
