@@ -70,7 +70,6 @@ int main()
   }
 
   printf("%d %d %d\n", ordenado1, ordenado2, ordenado3);
-  printf("%c %c %c", char1, char2, char3);
 
   return 0;
 }
